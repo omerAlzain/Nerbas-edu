@@ -958,7 +958,7 @@ class Request:
 
         ### Commented by me (m-azzain) for the sake of simplifying slice1
         self.db = None
-        
+
         self.registry = None
         self.env = None
 
@@ -990,12 +990,14 @@ class Request:
 
         dbname = None
         host = self.httprequest.environ['HTTP_HOST']
-        if session.db and db_filter([session.db], host=host):
-            dbname = session.db
-        else:
-            all_dbs = db_list(force=True, host=host)
-            if len(all_dbs) == 1:
-                dbname = all_dbs[0]  # monodb
+
+        ### Commented by me (m-azzain) for the sake of simplifying slice01
+        # if session.db and db_filter([session.db], host=host):
+        #     dbname = session.db
+        # else:
+        #     all_dbs = db_list(force=True, host=host)
+        #     if len(all_dbs) == 1:
+        #         dbname = all_dbs[0]  # monodb
 
         if session.db != dbname:
             if session.db:
