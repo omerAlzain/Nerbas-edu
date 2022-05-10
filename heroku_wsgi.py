@@ -11,16 +11,16 @@ os.environ['TZ'] = 'UTC'
 import odoo
 
 config = odoo.tools.config
-default_database_url = "postgress://user:pass@host:3271/db_name"
-database_url = os.environ.get('DATABASE_URL', default_database_url)
-
-m1 = database_url.split(":")
-config['db_user'] = m1[1][2:]
-config['db_password'] = m1[2].split("@")[0]
-config['db_host'] = m1[2].split("@")[1]
-config['db_port'] = m1[3].split("/")[0]
-config['db_name'] = m1[3].split("/")[1]
-config['addons_path'] = "addons,my_addons"
+# default_database_url = "postgress://user:pass@host:3271/db_name"
+# database_url = os.environ.get('DATABASE_URL', default_database_url)
+#
+# m1 = database_url.split(":")
+# config['db_user'] = m1[1][2:]
+# config['db_password'] = m1[2].split("@")[0]
+# config['db_host'] = m1[2].split("@")[1]
+# config['db_port'] = m1[3].split("/")[0]
+# config['db_name'] = m1[3].split("/")[1]
+config['addons_path'] = "addons"
 
 application = odoo.http.root
 # just trivial change to force heroku to rebuild;
