@@ -24,15 +24,21 @@ SIGN_UP_REQUEST_PARAMS = {'db', 'login', 'debug', 'token', 'message', 'error', '
                           'redirect', 'redirect_hostname', 'email', 'name', 'partner_id',
                           'password', 'confirm_password', 'city', 'country_id', 'lang'}
 
+class Person(http.Controller):
+    @http.route('/person', type='http', auth="none")
+    def person(self):
+        return '<h1> hello </h1>'
 
 class Home(http.Controller):
 
     @http.route('/', type='http', auth="none")
     def index(self, s_action=None, db=None, **kw):
-        return request.redirect_query('/web-temp', query=request.params)
+        # return request.redirect_query('/web', query=request.params)
+        ### Added by me (m-azzain) for the sake of simplifying slice1
+        return request.redirect_query('/slice01', query=request.params)
 
     ### Added by me (m-azzain) for the sake of simplifying slice1
-    @http.route('/web-temp', type='http', auth="none")
+    @http.route('/slice01', type='http', auth="none")
     def web_client_temp(self, s_action=None, **kw):
         from odoo.tools import file_open
         with file_open('web/static/slice01-temp/index.html') as f:
