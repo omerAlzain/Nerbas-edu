@@ -13,15 +13,15 @@ from odoo.service.server import load_server_wide_modules
 from odoo.modules import initialize_sys_path
 
 config = odoo.tools.config
-# default_database_url = "postgress://user:pass@host:3271/db_name"
-# database_url = os.environ.get('DATABASE_URL', default_database_url)
-#
-# m1 = database_url.split(":")
-# config['db_user'] = m1[1][2:]
-# config['db_password'] = m1[2].split("@")[0]
-# config['db_host'] = m1[2].split("@")[1]
-# config['db_port'] = m1[3].split("/")[0]
-# config['db_name'] = m1[3].split("/")[1]
+default_database_url = "postgress://user:pass@host:3271/db_name"
+database_url = os.environ.get('DATABASE_URL', default_database_url)
+
+m1 = database_url.split(":")
+config['db_user'] = m1[1][2:]
+config['db_password'] = m1[2].split("@")[0]
+config['db_host'] = m1[2].split("@")[1]
+config['db_port'] = m1[3].split("/")[0]
+config['db_name'] = m1[3].split("/")[1]
 config['addons_path'] = "addons"
 
 initialize_sys_path()

@@ -15,3 +15,6 @@ from . import home
 # from . import webclient
 
 # from . import main  # deprecated
+
+from . import slice02
+

@@ -24,18 +24,13 @@ SIGN_UP_REQUEST_PARAMS = {'db', 'login', 'debug', 'token', 'message', 'error', '
                           'redirect', 'redirect_hostname', 'email', 'name', 'partner_id',
                           'password', 'confirm_password', 'city', 'country_id', 'lang'}
 
-class Person(http.Controller):
-    @http.route('/person', type='http', auth="none")
-    def person(self):
-        return '<h1> hello </h1>'
-
 class Home(http.Controller):
 
     @http.route('/', type='http', auth="none")
     def index(self, s_action=None, db=None, **kw):
         # return request.redirect_query('/web', query=request.params)
         ### Added by me (m-azzain) for the sake of simplifying slice1
-        return request.redirect_query('/slice01', query=request.params)
+        return request.redirect_query('/slice02', query=request.params)
 
     ### Added by me (m-azzain) for the sake of simplifying slice1
     @http.route('/slice01', type='http', auth="none")

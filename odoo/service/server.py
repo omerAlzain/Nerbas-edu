@@ -1353,8 +1353,8 @@ def start(preload=None, stop=False):
     if watcher:
         watcher.stop()
     # like the legend of the phoenix, all ends with beginnings
-    if getattr(odoo, 'phoenix', False):
-        _reexec()
+    # if getattr(odoo, 'phoenix', False):
+    #     _reexec()
 
     return rc if rc else 0
 

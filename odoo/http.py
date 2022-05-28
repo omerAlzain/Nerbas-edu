@@ -956,9 +956,6 @@ class Request:
 
         self.session, self.db = self._get_session_and_dbname()
 
-        ### Commented by me (m-azzain) for the sake of simplifying slice1
-        self.db = None
-
         self.registry = None
         self.env = None
 
@@ -991,13 +988,12 @@ class Request:
         dbname = None
         host = self.httprequest.environ['HTTP_HOST']
 
-        ### Commented by me (m-azzain) for the sake of simplifying slice01
-        # if session.db and db_filter([session.db], host=host):
-        #     dbname = session.db
-        # else:
-        #     all_dbs = db_list(force=True, host=host)
-        #     if len(all_dbs) == 1:
-        #         dbname = all_dbs[0]  # monodb
+        if session.db and db_filter([session.db], host=host):
+            dbname = session.db
+        else:
+            all_dbs = db_list(force=True, host=host)
+            if len(all_dbs) == 1:
+                dbname = all_dbs[0]  # monodb
 
         if session.db != dbname:
             if session.db:
@@ -1088,7 +1084,10 @@ class Request:
         :returns: ASCII token string
         :rtype: str
         """
-        secret = self.env['ir.config_parameter'].sudo().get_param('database.secret')
+        ### Commented by me (m-azzain) for the sake of simplifying slice02
+        # secret = self.env['ir.config_parameter'].sudo().get_param('database.secret')
+        ### Added by me (m-azzain) for the sake of simplifying slice02
+        secret = 'a52281b2-4d9a-45c0-ae3d-dfb3867a4d5f';
         if not secret:
             raise ValueError("CSRF protection requires a configured database secret")
 
@@ -1110,7 +1109,10 @@ class Request:
         if not csrf:
             return False
 
-        secret = self.env['ir.config_parameter'].sudo().get_param('database.secret')
+        ### Commented by me (m-azzain) for the sake of simplifying slice02
+        # secret = self.env['ir.config_parameter'].sudo().get_param('database.secret')
+        ### Added by me (m-azzain) for the sake of simplifying slice02
+        secret = 'a52281b2-4d9a-45c0-ae3d-dfb3867a4d5f';
         if not secret:
             raise ValueError("CSRF protection requires a configured database secret")
 
@@ -1267,8 +1269,9 @@ class Request:
             location = location.to_url()
         if local:
             location = url_parse(location).replace(scheme='', netloc='').to_url()
-        if self.db:
-            return self.env['ir.http']._redirect(location, code)
+        ### Commented by me (m-azzain) for the sake of simplifying slice02
+        # if self.db:
+        #     return self.env['ir.http']._redirect(location, code)
         return werkzeug.utils.redirect(location, code, Response=Response)
 
     def redirect_query(self, location, query=None, code=303, local=True):
@@ -1516,8 +1519,9 @@ class HttpDispatcher(Dispatcher):
 
         # Check for CSRF token for relevant requests
         if self.request.httprequest.method not in CSRF_FREE_METHODS and endpoint.routing.get('csrf', True):
-            if not self.request.db:
-                return self.request.redirect('/web/database/selector')
+            ### Commented by me (m-azzain) for the sake of simplifying slice02
+            # if not self.request.db:
+            #     return self.request.redirect('/web/database/selector')
 
             token = self.request.params.pop('csrf_token', None)
             if not self.request.validate_csrf(token):
@@ -1527,10 +1531,12 @@ class HttpDispatcher(Dispatcher):
                     _logger.warning(MISSING_CSRF_WARNING, request.httprequest.path)
                 raise werkzeug.exceptions.BadRequest('Session expired (invalid CSRF token)')
 
-        if self.request.db:
-            return self.request.registry['ir.http']._dispatch(endpoint)
-        else:
-            return endpoint(**self.request.params)
+        ### Commented by me (m-azzain) for the sake of simplifying slice02
+        # if self.request.db:
+        #     return self.request.registry['ir.http']._dispatch(endpoint)
+        # else:
+        #     return endpoint(**self.request.params)
+        return endpoint(**self.request.params)
 
     def handle_error(self, exc):
         """
@@ -1611,10 +1617,12 @@ class JsonRPCDispatcher(Dispatcher):
         if ctx is not None and self.request.db:
             self.request.update_env(context=ctx)
 
-        if self.request.db:
-            result = self.request.registry['ir.http']._dispatch(endpoint)
-        else:
-            result = endpoint(**self.request.params)
+        ### Commented by me (m-azzain) for the sake of simplifying slice02
+        # if self.request.db:
+        #     result = self.request.registry['ir.http']._dispatch(endpoint)
+        # else:
+        #     result = endpoint(**self.request.params)
+        result = endpoint(**self.request.params)
         return self._response(result)
 
     def handle_error(self, exc):
@@ -1773,11 +1781,16 @@ class Application:
                     response = request._serve_static()
                     return response(environ, start_response)
 
-            if request.db:
-                with request._get_profiler_context_manager():
-                    response = request._serve_db()
-            else:
-                response = request._serve_nodb()
+            ### Commented by me (m-azzain) for the sake of simplifying slice02
+            # if request.db:
+            #     with request._get_profiler_context_manager():
+            #         response = request._serve_db()
+            # else:
+            #     response = request._serve_nodb()
+
+            ### Added by me (m-azzain) for the sake of simplifying slice02
+            response = request._serve_nodb()
+
             return response(environ, start_response)
 
         except Exception as exc:
