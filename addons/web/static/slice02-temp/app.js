@@ -1,7 +1,10 @@
 
 const { useState, useRef } = owl;
 
-class VisitorForum extends owl.Component {
+class VisitorList extends owl.Component {}
+VisitorList.template = 'VisitorList'
+
+class VisitorForm extends owl.Component {
     setup(){
         this.state = useState({ valid: true, error: '', submitted: false });
         this.onSubmit = this.onSubmit.bind(this);
@@ -33,14 +36,43 @@ class VisitorForum extends owl.Component {
     onSuccess(){
         console.log("successfully registered!!");
         this.state.submitted = true;
+        this.props.onAddedNewForm();
     }
     onFailure(reason){
-        error = `type: ${reason['type']}, error: ${reason['error']}, textStatus: ${reason['textStatus']}, errorThrown: ${reason['errorThrown']}`;
+        error = `${reason.message}`
         this.state.error = error;
     }
-
 }
-VisitorForum.template = 'VisitorForum'
+VisitorForm.template = 'VisitorForm'
+
+
+class Visitor extends owl.Component {
+    setup(){
+        this.state = useState({ visitors: [] });
+        this.onFetch = this.onFetch.bind(this);
+        this.fetch = this.fetch.bind(this);
+        this.onAddedNewForm = this.onAddedNewForm.bind(this);
+        this.fetch();
+    }
+    fetch(){
+        let url = `${location.origin}/read_visitor`;
+        //ajax.rpc(url, params, settings)
+        ajax.rpc(url, {}, {}).then(this.onFetch, this.onFailure);
+    }
+    onFetch(result){
+        console.log("successfully fetched!!");
+        this.state.visitors = result;
+    }
+    onFailure(reason){
+        error = `${reason.message}`
+        this.state.error = error;
+    }
+    onAddedNewForm(){
+        this.fetch();
+    }
+}
+Visitor.template = 'Visitor'
+Visitor.components = { VisitorList, VisitorForm }
 //------------------------------------------------------------------------------
 // Application initialization
 //------------------------------------------------------------------------------
@@ -51,7 +83,7 @@ async function start() {
     owl.loadFile("web/static/slice02-temp/templates.xml"),
     owl.whenReady()
   ]);
-  const rootApp = new owl.App(VisitorForum);
+  const rootApp = new owl.App(Visitor);
   rootApp.addTemplates(templates);
 
   await  rootApp.mount(document.getElementById('slice02'));
