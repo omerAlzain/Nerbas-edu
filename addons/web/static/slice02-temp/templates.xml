@@ -312,8 +312,8 @@
             </div>
         </section>
 
-        <div class="sign_in">
-            <div t-name="SignIn" class="main">
+        <section t-name="SignIn" id="sign_in">
+            <div class="main">
                 <input type="checkbox" id="chk" aria-hidden="true"/>
 
                     <div class="signup">
@@ -335,7 +335,7 @@
                         </form>
                     </div>
             </div>
-        </div>
+        </section>
 
     <section t-name="Visitor" class="page-section container" id="contact">
         <div class="row">
