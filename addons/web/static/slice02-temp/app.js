@@ -4,6 +4,9 @@ const { useState, useRef } = owl;
 class VisitorList extends owl.Component {}
 VisitorList.template = 'VisitorList'
 
+class SignIn extends owl.Component {}
+SignIn.template = "SignIn"
+
 class VisitorForm extends owl.Component {
     setup(){
         this.state = useState({ valid: true, error: '', submitted: false });
@@ -83,10 +86,10 @@ async function start() {
     owl.loadFile("web/static/slice02-temp/templates.xml"),
     owl.whenReady()
   ]);
-  const rootApp = new owl.App(Visitor);
+  const rootApp = new owl.App(SignIn);
   rootApp.addTemplates(templates);
 
-  await  rootApp.mount(document.getElementById('slice02'));
+  await  rootApp.mount(document.getElementById('sign_in'));
 }
 
 start();
