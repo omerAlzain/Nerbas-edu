@@ -7,6 +7,27 @@ VisitorList.template = 'VisitorList'
 class SignIn extends owl.Component {}
 SignIn.template = "SignIn"
 
+class Course extends owl.Component {}
+Course.template = "Course"
+
+class Team extends owl.Component {}
+Team.template = "Team"
+
+class Contact extends owl.Component {}
+Contact.template = "Contact"
+
+class Service extends owl.Component {}
+Service.template = "Service"
+
+class About extends owl.Component {}
+About.template = "About"
+
+
+class ActionManager extends owl.Component {}
+ActionManager.template = "ActionManager"
+ActionManager.components = { Service, SignIn, Team, About, Contact, Course }
+
+
 class VisitorForm extends owl.Component {
     setup(){
         this.state = useState({ valid: true, error: '', submitted: false });
@@ -48,7 +69,6 @@ class VisitorForm extends owl.Component {
 }
 VisitorForm.template = 'VisitorForm'
 
-
 class Visitor extends owl.Component {
     setup(){
         this.state = useState({ visitors: [] });
@@ -86,10 +106,10 @@ async function start() {
     owl.loadFile("web/static/slice02-temp/templates.xml"),
     owl.whenReady()
   ]);
-  const rootApp = new owl.App(SignIn);
+  const rootApp = new owl.App(ActionManager);
   rootApp.addTemplates(templates);
 
-  await  rootApp.mount(document.getElementById('sign_in'));
+  await  rootApp.mount(document.getElementById('action_manager'));
 }
 
 start();

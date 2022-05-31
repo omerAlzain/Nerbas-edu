@@ -11780,7 +11780,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 
 
-#sign_in{
+.sign_in{
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -11791,7 +11791,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 	background: linear-gradient(to bottom, #234935, #1f372f, #10231d);
 }
 .main{
-	width: 500px;
+	width: 400px;
 	height: 500px;
 	background: #10231d;
 	overflow: hidden;
