@@ -40,6 +40,9 @@ Service.template = "Service"
 class About extends owl.Component {}
 About.template = "About"
 
+class Home extends owl.Component {}
+Home.template = "Home"
+
 class NavBar extends Component {
     setup(){
         this.onClick = this.onClick.bind(this);
@@ -53,7 +56,7 @@ NavBar.template = "NavBar"
 
 class ActionManager extends owl.Component {
     setup() {
-        this.info = { Component: Service };
+        this.info = { Component: Home };
         this.onActionManagerUpdate = ({ detail }) => {
             this.info = { Component: ActionManager.components[detail.selectComponent] };
             this.render();
@@ -71,7 +74,7 @@ ActionManager.template = xml`
         </div>
     </t>`;
 
-ActionManager.components = { Service, SignIn, Team, About, Contact, Course }
+ActionManager.components = { Service, SignIn, Team, About, Contact, Course, Home }
 
 class WebClient extends Component {
 
@@ -180,7 +183,7 @@ async function start() {
   const rootApp = new owl.App(WebClient, { env });
   rootApp.addTemplates(templates);
 
-  await  rootApp.mount(document.getElementById('action_manager'));
+  await  rootApp.mount(document.getElementById('web_client'));
 }
 
 start();
