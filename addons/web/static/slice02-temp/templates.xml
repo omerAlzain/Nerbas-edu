@@ -346,7 +346,7 @@
             </div>
         </section>
     </t>
-        <section t-name="SignIn" class="sign_in">
+        <section t-name="SignIn" id="sign_in">
             <div class="main">
                 <input type="checkbox" id="chk" aria-hidden="true"/>
 

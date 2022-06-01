@@ -11780,7 +11780,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 
 
-.sign_in{
+#sign_in{
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -11873,3 +11873,39 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+
+.main1{
+    margin: 20px;
+    padding: 20px;
+    background-color: #f3f9f6;
+    border-radius: 5px;
+    box-shadow: 5px 20px 50px #010210;
+}
+
+.EXO{
+  border-left: 2px solid blue;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration-line: overline;
+  text-decoration-color: blue;
+}
+.Q{
+  font-style: italic;
+  font-size: 17px;
+  margin: 15px;
+  text-align: left;
+}
+.p_q{
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  width: auto;
+  padding: 10px;
+  border-radius: 4px;
+}
+.BODY{
+  background-color: #daebe5;
+  padding: 20px;
+  border-radius: 2px;
+}
+
