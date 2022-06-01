@@ -1,5 +1,10 @@
 <templates>
 
+    <t t-name="web.WebClient">       
+        <NavBar loggedIn="state.user.loggedIn" />
+        <ActionManager/>
+    </t>
+
     <div t-name="ActionManager">
         <SignIn />
         <Service/>
@@ -9,6 +14,25 @@
         <Contact/>
     </div>
 
+    <nav t-name="NavBar" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"><img src="web/static/slice01-temp/assets/img/navbar-logo.svg" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Service')" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Course')" href="#">Cours</a></li>
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('About')" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('TEAM')" href="#">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Contact')" href="#">Contact</a></li>
+                    <li t-if="!props.loggedIn" class="nav-item"><a class="nav-link" t-on-click="() => onClick('SignIn')" href="#">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 <!-- Contact-->
         <section t-name="Contact" class="page-section" id="contact">
@@ -281,7 +305,17 @@
             </div>
         </section>
 
-    <section t-name="Service" class="page-section" id="services">
+    <t t-name="Service">
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Welcome To Our Home!</div>
+            <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+
+            <!--<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>-->
+
+        </div>
+    </header>
+    <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Services</h2>
@@ -311,9 +345,9 @@
                 </div>
             </div>
         </section>
-
-        <div class="sign_in">
-            <div t-name="SignIn" class="main">
+    </t>
+        <section t-name="SignIn" class="sign_in">
+            <div class="main">
                 <input type="checkbox" id="chk" aria-hidden="true"/>
 
                     <div class="signup">
@@ -331,11 +365,11 @@
                             <label for="chk" aria-hidden="true">Login</label>
                             <input type="email" name="email" placeholder="Email" required=""/>
                             <input type="password" name="pswd" placeholder="Password" required=""/>
-                            <button>Login</button>
+                            <button t-on-click="onLogIn">Login</button>
                         </form>
                     </div>
             </div>
-        </div>
+        </section>
 
     <section t-name="Visitor" class="page-section container" id="contact">
         <div class="row">
