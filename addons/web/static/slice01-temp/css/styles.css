@@ -11909,3 +11909,41 @@ button:hover{
   border-radius: 2px;
 }
 
+.main2{
+    margin: 20px;
+    background-color: #f3f9f6;
+    border-radius: 5px;
+    box-shadow: 5px 20px 50px #010210;
+    max-width: 300px;
+    height:500px
+}
+img{
+  width: 300px;
+  height: 200px;
+  margin-bottom:10px;
+}
+.EXO1{
+  border-left: 2px solid blue;
+  margin-bottom: 10px;
+}
+.Q1{
+  font-style: italic;
+  font-size: 17px;
+  margin: 10px;
+}
+.p_q1{
+  background-color: white;
+  margin: 10px;
+  width: auto;
+  height:190px;
+  padding: 10px;
+  border-radius: 4px;
+}
+.BODY1{
+  background-color: #daebe5;
+  padding: 10px;
+  max-width: 400px;
+}
+
+
+

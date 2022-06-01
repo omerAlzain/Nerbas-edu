@@ -96,23 +96,43 @@
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">@@@@@@@@@@@@@@</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <div class="main2">
+                          <img src="web/static/slice01-temp/assets/img/Ap1.jpeg" alt=""/>
+                          <h5 style="text-align:center; padding:10px">Algo et Programmation (AP1)</h5>
+                          <div class="EXO1">
+                          </div>
+                          <div class="Q1">
+                          </div>
+                          <div class="p_q1">,njjkbhlkjbkjbnhkvbjkfvfvxvbfdv
+                            fvbdfbgdbgbkjlklk
+                          </div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <img style="width:300px" src="web/static/slice01-temp/assets/img/c++.jpg"/>
-                        <h4 class="my-3">Basics of C++ programming</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <div class="col-md-4" style="opacity: 0.3">
+                        <div class="main2">
+                          <img src="web/static/slice01-temp/assets/img/c++.jpg" alt=""/>
+                          <h5 style="text-align:center">Basics of C++ programming</h5>
+                          <div class="EXO1">
+                          </div>
+                          <div class="Q1">
+                          </div>
+                          <div class="p_q1">,njjkbhlkjbkjbnhkvbjkfvfvxvbfdv
+                            fvbdfbgdbgbkjlklk
+                          </div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-
-                        <img src="web/static/slice01-temp/assets/img/Ap1.jpeg"/>
-                        <h4 class="my-3">Algorithme et Arogrammation (AP1)</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <div class="col-md-4" style="opacity: 0.3">
+                        <div class="main2">
+                          <img src="web/static/slice01-temp/assets/img/web.jpg" alt=""/>
+                          <h5 style="text-align:center">Web Application</h5>
+                          <div class="EXO1">
+                          </div>
+                          <div class="Q1">
+                          </div>
+                          <div class="p_q1">,njjkbhlkjbkjbnhkvbjkfvfvxvbfdv
+                            fvbdfbgdbgbkjlklk
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
