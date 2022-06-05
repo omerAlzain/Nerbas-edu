@@ -10,7 +10,7 @@ Odoo Web module.
 This module is to practice single page application techniques.
 """,
     'depends': ['base', 'web'],
-    'auto_install': False,
+    'auto_install': True,
     'data': [
         'views/index_template.xml',
     ],
