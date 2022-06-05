@@ -1,0 +1,6 @@
+<templates>
+    <t t-name="web.WebClient">       
+        <NavBar loggedIn="state.user.loggedIn" />
+        <ActionManager/>
+    </t>
+</templates>

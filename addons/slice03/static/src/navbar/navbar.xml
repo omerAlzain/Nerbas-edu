@@ -1,0 +1,21 @@
+<templates>
+    <nav t-name="NavBar" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"><img src="slice03/static/img/navbar-logo.svg" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Home')" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Service')" href="#">Services</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" t-on-click="() => onClick('About')" href="#">About</a></li>-->
+                    <!--<li class="nav-item"><a class="nav-link" t-on-click="() => onClick('TEAM')" href="#">Team</a></li>-->
+                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Contact')" href="#">Contact</a></li>
+                    <li t-if="!props.loggedIn" class="nav-item"><a class="nav-link" t-on-click="() => onClick('SignIn')" href="#">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</templates>
