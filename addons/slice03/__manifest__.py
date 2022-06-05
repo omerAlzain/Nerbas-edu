@@ -25,11 +25,12 @@ This module is to practice single page application techniques.
             'web/static/lib/owl/owl.js',
             'web/static/lib/jquery/jquery.js',
             'web/static/lib/bootstrap/css/bootstrap.css',
-            'slice03/static/src/webclient/webclient.css'
+            'web/static/src/legacy/js/promise_extension.js',
+            'web/static/src/boot.js'
         ],
         'slice03.assets': [
-            'slice03/static/src/ajax.js',
-            'slice03/static/src/app.js',
+            'slice03/static/src/**/*.js',
+            'slice03/static/src/**/*.css',
         ]
     },
     'application': True,

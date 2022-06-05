@@ -10,6 +10,7 @@
         <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/slice03/static/img/favicon.ico'"/>
         <link rel="preload" href="/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" crossorigin=""/>
         <t t-call-assets="slice03.assets_common" t-js="false"/>
+        <t t-call-assets="slice03.assets" t-js="false"/>
 
         <script id="web.layout.odooscript" type="text/javascript">
             var odoo = {
@@ -22,8 +23,7 @@
         <t t-call-assets="slice03.assets_common" t-css="false" defer_load="True"/>
         <t t-call-assets="slice03.assets" t-css="false" defer_load="True"/>
     </head>
-    <body t-att-class="body_classname">
-        <t t-out="0"/>
+    <body>
     </body>
 </html>
     </template>
