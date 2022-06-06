@@ -46,8 +46,6 @@ This module is to practice single page application techniques.
         'slice03.assets': [
             'slice03/static/src/**/*.js',
             'slice03/static/src/**/*.css',
-            ('remove', 'slice03/static/src/css/styles.css'),
-            ('remove', 'slice03/static/src/js/scripts.js')
         ]
     },
     'application': True,
