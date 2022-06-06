@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control">...</textarea>
+                                        <textarea name="message" id="message" placeholder="Your message *" rows="4" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -192,6 +192,10 @@
                         </div>
                     </div>
                     <!-- End widget Tags -->
+                    <button class="btn btn-primary justify-content-center">
+                             <i class="fa-solid fa-arrow-right"></i>
+                             Get Started Now
+                    </button>
                 </div>
             </div>
         </div>
