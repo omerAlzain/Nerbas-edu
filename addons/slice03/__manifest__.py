@@ -24,8 +24,9 @@ This module is to practice single page application techniques.
             'web/static/lib/moment/moment.js',
             'web/static/lib/owl/owl.js',
             'web/static/lib/jquery/jquery.js',
-            'web/static/lib/bootstrap/css/bootstrap.css',
             'web/static/src/legacy/js/promise_extension.js',
+
+            'web/static/lib/bootstrap/css/bootstrap.css',
 
             'web/static/lib/bootstrap/js/index.js',
             'web/static/lib/bootstrap/js/util.js',

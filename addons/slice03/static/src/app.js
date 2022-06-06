@@ -22,7 +22,7 @@ async function start() {
   ]);
 
   const env = makeEnv();
-  const rootApp = new owl.App(WebClient, { env });
+  const rootApp = new owl.App(WebClient, { env, dev: true });
   rootApp.addTemplates(templates);
   await  rootApp.mount(document.body);
 }

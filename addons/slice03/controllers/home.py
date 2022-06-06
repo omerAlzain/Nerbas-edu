@@ -12,5 +12,5 @@ class HomeSlice03(Home):
 
     @http.route('/', type='http', auth="none")
     def index(self):
-        response = request.render('slice03.index', qcontext={})
+        response = request.render('slice03.index')
         return response
