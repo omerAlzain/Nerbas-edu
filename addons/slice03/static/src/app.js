@@ -25,8 +25,30 @@ class SignIn extends owl.Component {
 }
 SignIn.template = "SignIn"
 
-class Course extends owl.Component {}
-Course.template = "Course"
+class Portfolio extends owl.Component {
+    setup(){
+        this.onClickAp1 = this.onClickAp1.bind(this);
+        this.onClickC = this.onClickC.bind(this);
+        this.onClickWeb = this.onClickWeb.bind(this);
+    }
+
+    onClickAp1(event){
+        event.stopPropagation();
+        event.preventDefault();
+        this.env.bus.trigger("AP1_BUTTON:CLICKED");
+    }
+    onClickC(event){
+        event.stopPropagation();
+        event.preventDefault();
+        this.env.bus.trigger("C_BUTTON:CLICKED");
+    }
+    onClickWeb(event){
+        event.stopPropagation();
+        event.preventDefault();
+        this.env.bus.trigger("WEBA_BUTTON:CLICKED");
+    }
+}
+Portfolio.template = "Portfolio"
 
 class Team extends owl.Component {}
 Team.template = "Team"
@@ -34,14 +56,26 @@ Team.template = "Team"
 class Contact extends owl.Component {}
 Contact.template = "Contact"
 
-class Service extends owl.Component {}
-Service.template = "Service"
-
 class About extends owl.Component {}
 About.template = "About"
 
 class Home extends owl.Component {}
 Home.template = "Home"
+
+class Info extends owl.Component {}
+Info.template = "Info"
+
+class Event extends owl.Component {}
+Event.template = "Event"
+
+class Ap1 extends owl.Component {}
+Ap1.template = "Ap1"
+
+class C extends owl.Component {}
+C.template = "C"
+
+class WebA extends owl.Component {}
+WebA.template = "WebA"
 
 class NavBar extends Component {
     setup(){
@@ -74,7 +108,7 @@ ActionManager.template = xml`
         </div>
     </t>`;
 
-ActionManager.components = { Service, SignIn, Team, About, Contact, Course, Home }
+ActionManager.components = {Home, Portfolio, Ap1, C, WebA, Event, Team, About, Contact }
 
 class WebClient extends Component {
 
@@ -85,13 +119,32 @@ class WebClient extends Component {
     setup(){
         this.state = useState({ user: { loggedIn: false } });
         this.onLogIn = this.onLogIn.bind(this);
+        this.onClickAp1 = this.onClickAp1.bind(this);
+        this.onClickC = this.onClickC.bind(this);
+        this.onClickWeb = this.onClickWeb.bind(this);
         this.env.bus.addEventListener("LOGIN_BUTTON:CLICKED", this.onLogIn);
+        this.env.bus.addEventListener("AP1_BUTTON:CLICKED", this.onClickAp1);
+        this.env.bus.addEventListener("C_BUTTON:CLICKED", this.onClickC);
+        this.env.bus.addEventListener("WEBA_BUTTON:CLICKED", this.onClickWeb);
     }
 
     onLogIn(){
         this.state.user = { loggedIn: true };
         this.render();
-        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'Course' });
+        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'Portfolio' });
+    }
+
+    onClickAp1(){
+        this.render();
+        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'Ap1' });
+    }
+    onClickC(){
+        this.render();
+        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'C' });
+    }
+    onClickWeb(){
+        this.render();
+        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'WebA' });
     }
 }
 WebClient.components = {

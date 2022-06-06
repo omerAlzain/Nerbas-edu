@@ -1,0 +1,108 @@
+<templates>
+  <section t-name='Portfolio' class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+              <div class="container">
+                  <div class="text-center">
+                    <h4 class="section-subheading text-muted">##################################################################</h4>
+                </div>
+                <div class="row justify-content-center row_tp">
+                    <div class="col-md-6 col-lg-4 mb-5 tp">
+                        <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/Ap1.jpeg" alt="..." />
+                        <div class="n_tp">
+                            <h6>Algorithme et Programmation</h6>
+                        </div>
+                        <div class="dis">
+                          <p>Description....</p>
+                        </div>
+                        <div>
+                         <button t-on-click="onClickAp1" class="btn btn-primary justify-content-center">
+                             <i class="fa-solid fa-plus"></i>
+                             Show details
+                         </button>
+                       </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 mb-5 tp">
+                      <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/c++.jpg" alt="..." />
+                      <div class="n_tp">
+                          <h6>C++ Programming</h6>
+                      </div>
+                      <div class="dis">
+                          <p>Description....</p>
+                      </div>
+                        <div>
+                         <button t-on-click="onClickC" class="btn btn-primary justify-content-center">
+                             <i class="fa-solid fa-plus"></i>
+                             Show details
+                         </button>
+                       </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4 mb-5 tp">
+                      <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/web.jpg" alt="..." />
+                      <div class="n_tp">
+                          <h6> Web Application </h6>
+                      </div>
+                      <div class="dis">
+                          <p>Description....</p>
+                      </div>
+                        <div>
+                         <button t-on-click="onClicWeb" class="btn btn-primary justify-content-center">
+                             <i class="fa-solid fa-plus"></i>
+                             Show details
+                         </button>
+                       </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 tp" style="opacity:0px">
+                      <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/avataaars.svg" alt="..." />
+                      <div class="n_tp">
+                      </div>
+                      <div class="dis">
+                          <p>A venir ...</p>
+                      </div>
+                        <div>
+                         <button class="btn btn-primary justify-content-center" data-bs-dismiss="modal">
+                             ...............
+                         </button>
+                       </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0 tp">
+                      <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/avataaars.svg" alt="..." />
+                      <div class="n_tp">
+                      </div>
+                      <div class="dis">
+                          <p>A venir ...</p>
+                      </div>
+                        <button class="btn btn-primary justify-content-center" data-bs-dismiss="modal">
+                             ...............
+                         </button>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 tp">
+                      <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/avataaars.svg" alt="..." />
+                      <div class="n_tp">
+                      </div>
+                      <div class="dis">
+                          <p>A venir ...</p>
+                      </div>
+                        <button class="btn btn-primary justify-content-center" data-bs-dismiss="modal">
+                             ...............
+                         </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+</templates>
