@@ -1,0 +1,37 @@
+<templates>    
+    <section t-name="SignIn" id="sign_in">
+        <div class="main">
+            <input type="checkbox" id="chk" aria-hidden="true"/>
+
+                <div class="signup">
+                    <form>
+                        <label for="chk" aria-hidden="true">Sign up</label>
+                        <input type="text" name="txt" placeholder="User name" required=""/>
+                        <input type="email" name="email" placeholder="Email" required=""/>
+                        <input type="password" name="pswd" placeholder="Password" required=""/>
+                        <button>Sign up</button>
+                        <button t-on-click="openDialog">Dialog(Modal) Example</button>
+                    </form>
+                </div>
+
+                <div class="login">
+                    <form>
+                        <label for="chk" aria-hidden="true">Login</label>
+                        <input type="email" name="email" placeholder="Email" required=""/>
+                        <input type="password" name="pswd" placeholder="Password" required=""/>
+                        <button t-on-click="onLogIn">Login</button>
+                    </form>
+                </div>
+        </div>
+        <t t-if="state.displayDialog">
+<!--            <ConfirmationDialog body="'Hello there, this can be considered a body'" title="'The Title'" close="closeDialog" cancel="closeDialog"  />-->
+            <Dialog size="'xl'" title="'Your title'" close="closeDialog">
+                    <div>
+                        <h3>This can be considered a body</h3>
+                        <p>whatever contents you have may go here.</p>
+                        <p>you can even define a footer in a slot; see ConfirmationDialog in the files dialog_use_example</p>
+                    </div>
+            </Dialog>
+        </t>
+    </section>
+</templates>
