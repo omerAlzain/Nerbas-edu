@@ -22,7 +22,7 @@ export class Portfolio extends Component {
     onClickWeb(event){
         event.stopPropagation();
         event.preventDefault();
-        this.env.bus.trigger("WEBA_BUTTON:CLICKED");
+        this.env.bus.trigger("WEBAPP_BUTTON:CLICKED");
     }
 }
 Portfolio.template = "Portfolio"

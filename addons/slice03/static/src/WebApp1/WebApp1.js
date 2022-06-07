@@ -2,5 +2,5 @@
 
 const { Component} = owl;
 
-export class WebA extends Component {}
-WebA.template = 'WebA'
+export class WebApp1 extends Component {}
+WebApp1.template = 'WebApp1'

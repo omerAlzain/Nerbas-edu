@@ -5,7 +5,7 @@ import { ActionManager } from '@slice03/action_manager/action_manager'
 import { NavBar } from '@slice03/navbar/navbar'
 import { Ap1 } from '@slice03/ap1/ap1'
 import { C } from '@slice03/c++/c'
-import { WebA } from '@slice03/WebApp1/WebApp1'
+import { WebApp1 } from '@slice03/WebApp1/WebApp1'
 
 export class WebClient extends Component {
 
@@ -22,7 +22,7 @@ export class WebClient extends Component {
         this.env.bus.addEventListener("LOGIN_BUTTON:CLICKED", this.onLogIn);
         this.env.bus.addEventListener("AP1_BUTTON:CLICKED", this.onClickAp1);
         this.env.bus.addEventListener("C_BUTTON:CLICKED", this.onClickC);
-        this.env.bus.addEventListener("WEBA_BUTTON:CLICKED", this.onClickWeb);
+        this.env.bus.addEventListener("WEBAPP_BUTTON:CLICKED", this.onClickWeb);
     }
 
     onLogIn(){
@@ -41,7 +41,7 @@ export class WebClient extends Component {
     }
     onClickWeb(){
         this.render();
-        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'WebA' });
+        this.env.bus.trigger("ACTION_MANAGER:UPDATE", { selectComponent: 'WebApp1' });
     }
 }
 WebClient.components = {

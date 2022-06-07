@@ -8,7 +8,7 @@ import { Contact } from '@slice03/contact/contact'
 import { Home } from '@slice03/home/home'
 import { Event } from '@slice03/event/event'
 import { Ap1 } from '@slice03/ap1/ap1'
-import { WebA } from '@slice03/WebApp1/WebApp1'
+import { WebApp1 } from '@slice03/WebApp1/WebApp1'
 import { C } from '@slice03/c++/c'
 import { Info } from '@slice03/info/info'
 import { Portfolio } from '@slice03/portfolio/portfolio'
@@ -35,4 +35,4 @@ ActionManager.template = xml`
         </div>
     </t>`;
 
-ActionManager.components = { SignIn,C, WebA, Ap1, Team, About, Contact, Event, Home, Portfolio }
+ActionManager.components = { SignIn,C, WebApp1, Ap1, Team, About, Contact, Event, Home, Portfolio }

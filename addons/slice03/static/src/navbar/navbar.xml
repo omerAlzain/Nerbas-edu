@@ -1,5 +1,4 @@
 <templates>
-
     <nav t-name="NavBar" class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" t-on-click="() => onClick('Home')" href="#page-top">Nebras Education</a>

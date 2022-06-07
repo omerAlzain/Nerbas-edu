@@ -8,7 +8,7 @@
                          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                          <div class="divider-custom-line"></div>
                      </div>
-                  <h4 class="section-subheading text-muted">##################################################################</h4>
+                  <h6 class="section-subheading text-muted">@@@@@@@@@@@@@</h6>
                 </div>
                 <div class="row justify-content-center row_tp">
                     <div class="col-md-6 col-lg-4 mb-5 tp">
@@ -44,7 +44,7 @@
                     </div>
 
 
-                    <div class="col-md-6 col-lg-4 mb-5 tp">
+                    <div class="col-md-6 col-lg-4 mb-5 tp" style="opacity:0.6">
                       <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/web.jpg" alt="..." />
                       <div class="n_tp">
                           <h6> Web Application </h6>
@@ -53,7 +53,7 @@
                           <p>Description....</p>
                       </div>
                         <div>
-                         <button t-on-click="onClicWeb" class="btn btn-primary justify-content-center">
+                         <button t-on-click="onClickWeb" class="btn btn-primary justify-content-center">
                              <i class="fa-solid fa-plus"></i>
                              Show details
                          </button>
@@ -61,7 +61,7 @@
                     </div>
 
 
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 tp" style="opacity:0px">
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 tp" style="opacity:0.6">
                       <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/avataaars.svg" alt="..." />
                       <div class="n_tp">
                       </div>
@@ -75,7 +75,7 @@
                        </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0 tp">
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0 tp" style="opacity:0.6">
                       <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/avataaars.svg" alt="..." />
                       <div class="n_tp">
                       </div>
@@ -87,7 +87,7 @@
                          </button>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 tp">
+                    <div class="col-md-6 col-lg-4 tp" style="opacity:0.6">
                       <img class="img-fluid rounded mb-5 pro" src="slice03/static/img/avataaars.svg" alt="..." />
                       <div class="n_tp">
                       </div>
