@@ -8,7 +8,11 @@
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid img_event" src="slice03/static/img/about/1.jpg" alt="..." /></div>
+                    <div class="timeline-image">
+
+                         <img class="rounded-circle img-fluid img_event" src="slice03/static/img/about/1.jpg" alt="..." />
+
+                    </div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>2009-2011</h4>
