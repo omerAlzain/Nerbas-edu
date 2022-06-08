@@ -1,21 +1,20 @@
 <templates>
-    <nav t-name="NavBar" class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="slice03/static/img/navbar-logo.svg" alt="..." /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Home')" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Service')" href="#">Services</a></li>
-                    <!--<li class="nav-item"><a class="nav-link" t-on-click="() => onClick('About')" href="#">About</a></li>-->
-                    <!--<li class="nav-item"><a class="nav-link" t-on-click="() => onClick('TEAM')" href="#">Team</a></li>-->
-                    <li class="nav-item"><a class="nav-link" t-on-click="() => onClick('Contact')" href="#">Contact</a></li>
-                    <li t-if="!props.loggedIn" class="nav-item"><a class="nav-link" t-on-click="() => onClick('SignIn')" href="#">Sign In</a></li>
-                </ul>
+    <nav t-name="NavBar" class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" t-on-click="() => onClick('Home')" href="#page-top">Nebras Education</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" t-on-click="() => onClick('Portfolio')" href="#">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" t-on-click="() => onClick('Event')" href="#">Events</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" t-on-click="() => onClick('About')" href="#">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" t-on-click="() => onClick('Team')" href="#">Team</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" t-on-click="() => onClick('Contact')" href="#">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
     </nav>
 </templates>

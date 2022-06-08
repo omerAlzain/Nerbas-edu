@@ -44,6 +44,7 @@ This module is to practice single page application techniques.
 
             'web/static/src/boot.js'
         ],
+
         'slice03.assets': [
             'slice03/static/src/**/*.js',
             'slice03/static/src/**/*.css',

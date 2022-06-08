@@ -1,13 +1,14 @@
 /** @odoo-module **/
-
+import { ActionManager } from '@slice03/action_manager/action_manager';
+import { WebClient } from '@slice03/webclient/webclient';
 const { EventBus } = owl;
-import { WebClient } from '@slice03/webclient/webclient'
 
 function makeEnv() {
     return {
         bus: new EventBus()
     };
 }
+
 
 //------------------------------------------------------------------------------
 // Application initialization
